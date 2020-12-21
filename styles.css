@@ -1,0 +1,48 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+}
+
+#home {
+    background-color: black;
+}
+
+#home h1 {
+    color: white;
+    font-size: 10rem;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+#home div {
+    height: 100vh;
+}
+
+.h2 {
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+.table {
+    text-align: center;
+}
+
+#carModal h5, #carModal button, .button-container button {
+    font-size: 1.6rem;
+}
+
+.card img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.modal-body input, .card a, .card button {
+    font-size: 1.4rem;
+}
