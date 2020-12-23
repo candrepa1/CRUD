@@ -1,3 +1,5 @@
+/* GENERAL */
+
 html {
     font-size: 62.5%;
 }
@@ -6,9 +8,18 @@ body {
     font-size: 1.6rem;
 }
 
+.h2 {
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+/* NAVBAR */
+
 .navbar-brand {
     font-size: 1.6rem;
 }
+
+/* MAIN */
 
 #home {
     background-color: black;
@@ -25,14 +36,7 @@ body {
     height: 100vh;
 }
 
-.h2 {
-    font-size: 3.5rem;
-    text-align: center;
-}
-
-.table {
-    text-align: center;
-}
+/* MODAL */
 
 #carModal h5, #carModal button, .button-container button {
     font-size: 1.6rem;
