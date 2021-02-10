@@ -46,7 +46,7 @@ const cars = [
     },
 ];
 
-let counter = 0;
+let counter = false;
 
 let index = 0;
 
@@ -58,8 +58,7 @@ function printCars() {
 
 function editCar(id) {
 
-    if (confirm('Are you sure you want to EDIT this item?')) {
-        counter = 1;
+        counter = true;
         index = cars.findIndex((car) => car.id == id);
         document.getElementById('brand').value = cars[index].brand;
         document.getElementById('model').value = cars[index].model;
@@ -67,18 +66,16 @@ function editCar(id) {
         document.getElementById('year').value = cars[index].year;
         document.getElementById('price').value = cars[index].price;
         document.getElementById('image-url').value = cars[index].image;
-    } else {
-        // stop modal from appearing
-    }
 }
 
 function addOrUpdateCar() {
-    if (counter == 0) {
+    if (counter == false) {
         addCar();
     } else {
         updateCar();
     }
-    counter = 0;
+    counter = false;
+    // counter ? addCar() : updateCar();
 }
 
 function updateCar() {
@@ -103,6 +100,8 @@ function updateCar() {
     cars.splice(index, 1, update);
     printCars();
 
+    $('#carModal').modal('hide');
+
     // Clean form
     document.getElementById('form-cars').reset();
 }
@@ -115,7 +114,10 @@ function addCar() {
     const price = document.getElementById('price').value;
     const image = document.getElementById('image-url').value;
 
-    const id = cars[cars.length - 1].id + 1;
+    let id = 1;
+    if (cars.length > 0) {
+        const id = cars[cars.length - 1].id + 1;
+    }
 
     const newCar = {
         id,
@@ -138,6 +140,7 @@ function deleteCar(id) {
 }
 
 function cleanForm() {
+    counter = false;
     // Clean form
     document.getElementById('form-cars').reset();
 }
